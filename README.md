@@ -23,6 +23,20 @@ $ go build
 $ ./producer
 ```
 
+- Send Message to Kafka topic
+```shell
+curl -X POST \
+http://localhost:3000/api/send \
+-H 'content-type: application/json' \
+-d '{
+    "from": "Wuriyanto",
+        "content":{
+            "header": "This is Message 2",
+            "body": "Hello Kafka"
+        }
+    }'
+```
+
 - Start Consumer
 
   install dependencies
