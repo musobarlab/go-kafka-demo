@@ -1,0 +1,13 @@
+syntax="proto3";
+
+package message;
+
+message Content {
+    string Header = 1;
+    string Body = 2;
+}
+
+message Message {
+    string From = 1;
+    Content Content = 2;
+}

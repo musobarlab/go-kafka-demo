@@ -1,7 +1,6 @@
 package sub
 
 import (
-	"encoding/json"
 	"fmt"
 	"os"
 	"os/signal"
@@ -44,8 +43,18 @@ func (s *SubscriberImpl) Subscribe(topic string) {
 			case msg := <-consumer.Messages():
 				fmt.Println("Received messages", string(msg.Key))
 
-				var message Message
-				_ = json.Unmarshal(msg.Value, &message)
+				//var message Message
+
+				// using json decoder
+				// _ = json.Unmarshal(msg.Value, &message)
+
+				// using protobuf decoder
+
+				message, err := UnmarshalProto(msg.Value)
+				if err != nil {
+					fmt.Println(err.Error())
+				}
+
 				fmt.Println("Topic : ", msg.Topic)
 				fmt.Println("-------------")
 				fmt.Println(message)
