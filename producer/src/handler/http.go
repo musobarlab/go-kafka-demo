@@ -31,11 +31,11 @@ func (h *HTTPHandler) PublishMessages() http.Handler {
 			return
 		}
 
-		var message pub.Message
+		message := new(pub.Message)
 
 		//get message from request
 		decoder := json.NewDecoder(req.Body)
-		err := decoder.Decode(&message)
+		err := decoder.Decode(message)
 
 		if err != nil {
 			log.Printf("Error parsing message : %v", err.Error())
@@ -44,7 +44,11 @@ func (h *HTTPHandler) PublishMessages() http.Handler {
 		}
 
 		//publish message to kafka
-		b, err := message.JSON()
+		// using json encoder
+		//b, err := message.JSON()
+
+		// using protobuf encoder
+		b, err := message.ToProto()
 
 		if err != nil {
 			log.Printf("Error %s", err.Error())
