@@ -1,6 +1,8 @@
-hash: df17803c20da5173b7d2d6e40ead95f0c190575be45341f26f7b92f691b159dc
-updated: 2018-10-04T08:28:31.830704632+07:00
+hash: ef3576afee33d57e6a174259cb1f30d8514d5029e31a1202a524f5408bd859d8
+updated: 2019-04-10T09:45:55.039527+07:00
 imports:
+- name: github.com/DataDog/zstd
+  version: 7961390227987fc4aaf937c8a4755e3072b0bad4
 - name: github.com/davecgh/go-spew
   version: 8991bc29aa16c548c550c7ff78260e27b9ab7c73
   subpackages:
@@ -13,16 +15,23 @@ imports:
   version: 776d5712da21bc4762676d614db1d8a64f4238b0
 - name: github.com/eapache/queue
   version: 093482f3f8ce946c05bcba64badd2c82369e084d
+- name: github.com/golang/protobuf
+  version: b5d812f8a3706043e23a9cd5babf2e5423744d30
 - name: github.com/golang/snappy
-  version: 2e65f85255dbc3072edf28d6b5b8efc472979f5a
+  version: 2a8bb927dd31d8daada140a5d09578521ce5c36a
 - name: github.com/joho/godotenv
   version: 23d116af351c84513e1946b527c88823e476be13
 - name: github.com/pierrec/lz4
-  version: 1f6e18d34f6790fc0afea6f13a5fe3d9ab1770af
+  version: 315a67e90e415bcdaff33057da191569bf4d8479
   subpackages:
   - internal/xxh32
 - name: github.com/rcrowley/go-metrics
-  version: e2704e165165ec55d062f5919b4b29494e9fa790
+  version: 3113b8401b8a98917cde58f8bbd42a1b1c03b1fd
 - name: github.com/Shopify/sarama
   version: ec843464b50d4c8b56403ec9d589cf41ea30e722
+- name: golang.org/x/net
+  version: 9f648a60d9775ef5c977e7669d1673a7a67bef33
+  subpackages:
+  - internal/socks
+  - proxy
 testImports: []

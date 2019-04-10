@@ -10,3 +10,6 @@ import:
   - spew
 - package: github.com/eapache/go-resiliency
   version: v1.1.0
+- package: github.com/eapache/go-xerial-snappy
+- package: github.com/golang/protobuf
+  version: v1.3.1
